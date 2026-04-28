@@ -265,9 +265,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2114549030}
+  - component: {fileID: 2114549031}
   m_Layer: 0
   m_Name: Stage
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,6 +288,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114549031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114549029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d6582a7a98a9447aa32b9cc3cff552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stage
+  TilePrefab: {fileID: 5981586152527734085, guid: c9a53845bf561724ab17a7f347991900, type: 3}
+  MapWidth: 20
+  MapHeight: 20
+  ErodePercent: 0.2
+  ErodeIterations: 3
+  LakePercent: 0.01
+  TreePercent: 0.1
+  HillPercent: 0.05
+  MountainPercent: 0.03
+  TownPercent: 0.05
+  MonsterPercent: 0.05
+  TileSize: {x: 16, y: 16}
+  FowRange: 3
+  IslandSprites:
+  - {fileID: 21300000, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300002, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300004, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300006, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300008, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300010, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300012, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300014, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300016, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300018, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300020, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300022, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300024, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300026, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300028, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300030, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300032, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300034, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300036, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300038, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300040, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  - {fileID: 21300042, guid: 6dda2095192964815b349ac505a5e664, type: 3}
+  FowSprites:
+  - {fileID: 21300000, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300002, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300004, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300006, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300008, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300010, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300012, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300014, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300016, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300018, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300020, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300022, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300024, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300026, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300028, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  - {fileID: 21300030, guid: dfa5f63634ba24c06a7c899467e4f9f3, type: 3}
+  playerPrefab: {fileID: 3657337512706500995, guid: 2a63f4e1775f6ab418ee430b9b3e4f3a, type: 3}
+  player: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
