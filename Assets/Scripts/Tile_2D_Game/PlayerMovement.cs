@@ -1,13 +1,17 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float MoveDuration = 0.3f;
     private Stage _stage;
     private Animator _animator;
     private int currentTileId;
 
     public event Action<Vector3> OnMoveComplete;
+
+    private bool _isMoving;
 
     private void Awake()
     {
@@ -20,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (_isMoving) return;
+
         var direction = Sides.None;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -48,11 +54,37 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Init(int tileId)
+    {
+        currentTileId = tileId;
+        transform.position = _stage.GetTilePos(tileId);
+    }
+
     public void MoveTo(int tileId)
     {
         currentTileId = tileId;
+        StartCoroutine(MoveRoutine(_stage.GetTilePos(tileId)));
+    }
 
-        transform.position = _stage.GetTilePos(tileId);
+    private IEnumerator MoveRoutine(Vector3 target)
+    {
+        _isMoving = true;
+        _animator.speed = 1f;
+
+        Vector3 start = transform.position;
+        float elapsed = 0f;
+
+        while (elapsed < MoveDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / MoveDuration;
+            transform.position = Vector3.Lerp(start, target, t);
+            yield return null;
+        }
+
+        transform.position = target;
+        _isMoving = false;
+        _animator.speed = 0f;
         OnMoveComplete?.Invoke(transform.position);
     }
 }

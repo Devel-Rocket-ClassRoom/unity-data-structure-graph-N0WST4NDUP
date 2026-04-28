@@ -162,7 +162,7 @@ public class Stage : MonoBehaviour
         }
 
         player = Instantiate(playerPrefab, transform).GetComponent<PlayerMovement>();
-        player.MoveTo(_map.StartTile.Id);
+        player.Init(_map.StartTile.Id);
         _map.StartTile.IsVisited = true;
     }
 
